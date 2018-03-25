@@ -6,10 +6,10 @@ library("ROAuth")
 download.file(url="http://curl.haxx.se/ca/cacert.pem",destfile="cacert.pem")
 
 #different for each account
-consumerKey="VJDjnD46pnZ7KENoj3zOyC600"
-consumerSecret="vcE1VBMcdXAjsGe9gTo9fWeqNyG2j8Yzsf4TwQm7jU1n5ttW7u"
-AccessToken="2538628838-xLlXXDIhQ9kP0qsf6aq3c64jW6DEnJOxSIwXXIK"
-AccessTokenSecret="oJtJDUGZPVhfjhDc1997z0uXsttiFcfJxnScFHGhNu4Kd"
+consumerKey="fE7zaOxTAJH7627wv38pB58Vm"
+consumerSecret="gSbCyglJ0DAqTN4v2LFPJ4dO2ZtCfAF5sHbJx5yOw4c9jyahPI"
+AccessToken="2538628838-qwcsyZSHIeOxkHOE031D2a9YwlRmlladozB0bzq"
+AccessTokenSecret="6GY6vdgv6ZY4EWjsctUqChsWJl5wl5TYYrx2OHOl8cof3"
 
 
 #Commont for all accounts except the keys
@@ -27,8 +27,11 @@ load("twitter authentication.Rdata")
 
 setup_twitter_oauth(consumerKey, consumerSecret, AccessToken, AccessTokenSecret)
 
-search.string <- "#businessanalytics"
+search.string <- "#CMAP"
 no.of.tweets <- 100
 
+searchTwitter(search.string, n=no.of.tweets,lang="en", since='2018-03-22')
 tweets <- searchTwitter(search.string, n=no.of.tweets,lang="en")
 tweets
+homeTimeline(n=15)  #my tweets
+mentions(n=15)   # my tags
